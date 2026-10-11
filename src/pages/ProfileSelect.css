@@ -1,0 +1,85 @@
+.profile-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #141414;
+  gap: 2rem;
+}
+
+.profile-logo {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e50914;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.profile-list {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.1);
+}
+
+.profile-card:hover .profile-name {
+  color: #fff;
+}
+
+.profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.profile-card:hover .profile-avatar {
+  border-color: #fff;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  color: #808080;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .profile-logo {
+    font-size: 2rem;
+  }
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
