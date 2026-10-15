@@ -76,7 +76,7 @@ O site é composto por:
 ## ✨ Funcionalidades Principais
 
 - 🎬 **Tela de Seleção de Perfil:** Interface estilo Netflix com animação hover
-- 🌐 **Bilíngue (PT/EN):** Toggle de idioma na seção Sobre Mim
+- 🌐 **Bilíngue (PT/EN):** Toggle de idioma no navbar que traduz o site inteiro
 - 📂 **Projetos em Scroll Horizontal:** Row estilo Netflix com setas de navegação e linha do tempo
 - 🎨 **Design Responsivo:** Adapta-se a desktop, tablet e mobile
 - 📧 **Formulário de Contato:** Com campos validados e envio via EmailJS
