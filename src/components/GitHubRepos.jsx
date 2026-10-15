@@ -1,36 +1,25 @@
-import { useState, useEffect } from 'react'
 import { FaGithub, FaStar, FaCodeBranch } from 'react-icons/fa'
+import { useLanguage } from '../i18n/context.js'
+import { useGitHubRepos } from '../hooks/useGitHub.js'
+import { getLanguageColor } from '../utils/languageColors.js'
 import './GitHubRepos.css'
 
-const GITHUB_USERNAME = 'jpommoura'
+const MAX_REPOS = 8
 
 function GitHubRepos() {
-  const [repos, setRepos] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=8`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setRepos(data.filter((r) => !r.fork))
-        }
-        setLoading(false)
-      })
-      .catch(() => setLoading(false))
-  }, [])
+  const { t } = useLanguage()
+  const { data, loading } = useGitHubRepos()
+  const repos = (data ?? []).filter((r) => !r.fork).slice(0, MAX_REPOS)
 
   return (
     <section className="github-repos" id="github">
-      <h2 className="section-title">GitHub</h2>
-      <p className="github-subtitle">
-        Repositórios atualizados em tempo real via GitHub API
-      </p>
+      <h2 className="section-title">{t.github.title}</h2>
+      <p className="github-subtitle">{t.github.subtitle}</p>
 
       {loading ? (
         <div className="github-loading">
           <div className="github-spinner" />
-          <span>Carregando repositórios...</span>
+          <span>{t.github.loading}</span>
         </div>
       ) : (
         <div className="github-grid">
@@ -47,7 +36,7 @@ function GitHubRepos() {
                 <h3>{repo.name}</h3>
               </div>
               <p className="github-card-desc">
-                {repo.description || 'Sem descrição'}
+                {repo.description || t.github.noDescription}
               </p>
               <div className="github-card-footer">
                 {repo.language && (
@@ -72,22 +61,6 @@ function GitHubRepos() {
       )}
     </section>
   )
-}
-
-function getLanguageColor(lang) {
-  const colors = {
-    JavaScript: '#f1e05a',
-    TypeScript: '#3178c6',
-    HTML: '#e34c26',
-    CSS: '#563d7c',
-    Python: '#3572A5',
-    Java: '#b07219',
-    'C#': '#178600',
-    PHP: '#4F5D95',
-    Ruby: '#701516',
-    Go: '#00ADD8',
-  }
-  return colors[lang] || '#808080'
 }
 
 export default GitHubRepos

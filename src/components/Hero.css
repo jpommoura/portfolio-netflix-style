@@ -23,30 +23,6 @@
   padding-top: 5rem;
 }
 
-.hero-lang-toggle {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-lang-toggle button {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #aaa;
-  padding: 0.3rem 0.75rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.hero-lang-toggle button.active {
-  background: #e50914;
-  border-color: #e50914;
-  color: #fff;
-}
-
 .hero-greeting {
   font-size: 1.2rem;
   color: #aaa;

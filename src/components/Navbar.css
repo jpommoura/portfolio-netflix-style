@@ -53,9 +53,11 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .navbar-profile {
+  display: flex;
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -71,5 +73,9 @@
 
   .navbar-links {
     display: none;
+  }
+
+  .navbar-right {
+    gap: 0.6rem;
   }
 }

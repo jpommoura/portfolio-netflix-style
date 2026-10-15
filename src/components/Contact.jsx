@@ -6,21 +6,18 @@ import {
   FaLinkedin,
   FaGithub,
 } from 'react-icons/fa'
+import { useLanguage } from '../i18n/context.js'
 import './Contact.css'
 
-// Configure suas credenciais do EmailJS aqui:
-// 1. Crie uma conta em https://www.emailjs.com/
-// 2. Adicione um serviço de e-mail (Gmail, Outlook, etc.)
-// 3. Crie um template com variáveis: {{from_name}}, {{from_email}}, {{message}}
-// 4. Substitua os valores abaixo pelos seus
 const EMAILJS_SERVICE_ID = 'service_4dip0ks'
 const EMAILJS_TEMPLATE_ID = 'template_krb8ibn'
 const EMAILJS_PUBLIC_KEY = '6Vt4NNomunXJpRUmi'
 
 function Contact() {
   const formRef = useRef(null)
+  const { t } = useLanguage()
   const [form, setForm] = useState({ from_name: '', from_email: '', message: '' })
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [status, setStatus] = useState('idle')
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -46,16 +43,16 @@ function Contact() {
 
   const getButtonText = () => {
     switch (status) {
-      case 'sending': return 'Enviando...'
-      case 'sent': return '✓ Enviado com sucesso!'
-      case 'error': return '✗ Erro ao enviar'
-      default: return 'Enviar mensagem'
+      case 'sending': return t.contact.sending
+      case 'sent': return t.contact.sent
+      case 'error': return t.contact.error
+      default: return t.contact.send
     }
   }
 
   return (
     <section className="contact" id="contact">
-      <h2 className="section-title">Contato</h2>
+      <h2 className="section-title">{t.contact.title}</h2>
       <div className="contact-wrapper">
         <div className="contact-icons">
           <a href="mailto:jpommoura@gmail.com" className="contact-icon-link" title="E-mail">
@@ -98,7 +95,7 @@ function Contact() {
           <input
             type="text"
             name="from_name"
-            placeholder="Seu nome"
+            placeholder={t.contact.name}
             value={form.from_name}
             onChange={handleChange}
             required
@@ -106,14 +103,14 @@ function Contact() {
           <input
             type="email"
             name="from_email"
-            placeholder="Seu e-mail"
+            placeholder={t.contact.email}
             value={form.from_email}
             onChange={handleChange}
             required
           />
           <textarea
             name="message"
-            placeholder="Sua mensagem"
+            placeholder={t.contact.message}
             rows={5}
             value={form.message}
             onChange={handleChange}

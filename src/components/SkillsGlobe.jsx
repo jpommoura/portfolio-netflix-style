@@ -7,6 +7,7 @@ import {
   FaGithub, FaBootstrap, FaDatabase, FaNpm, FaTerminal, FaCode,
   FaBolt, FaServer, FaFileCode, FaLaptopCode,
 } from 'react-icons/fa'
+import { useLanguage } from '../i18n/context.js'
 import './SkillsGlobe.css'
 
 /* ── Skills Data ── */
@@ -132,6 +133,7 @@ function FitCamera({ radius, pose }) {
 }
 
 export default function SkillsGlobe() {
+  const { t } = useLanguage()
   const container = useRef(null)
   const items = useRef([])
   const dragStart = useRef(null)
@@ -168,8 +170,8 @@ export default function SkillsGlobe() {
 
   return (
     <section className="skills-globe-section" id="skills">
-      <h2 className="section-title">Skills</h2>
-      <p className="skills-globe-subtitle">Arraste para girar o globo</p>
+      <h2 className="section-title">{t.skills.title}</h2>
+      <p className="skills-globe-subtitle">{t.skills.subtitle}</p>
       <div className="skills-globe">
         <div
           ref={container}

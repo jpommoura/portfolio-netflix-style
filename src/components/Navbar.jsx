@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaUserCircle } from 'react-icons/fa'
+import LanguageToggle from './LanguageToggle.jsx'
+import Notifications from './Notifications.jsx'
+import { useLanguage } from '../i18n/context.js'
 import './Navbar.css'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const navigate = useNavigate()
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,16 +28,18 @@ function Navbar() {
       <div className="navbar-left">
         <span className="navbar-logo" onClick={() => scrollTo('hero')}>PORTFOLIO</span>
         <ul className="navbar-links">
-          <li onClick={() => scrollTo('hero')}>Sobre Mim</li>
-          <li onClick={() => scrollTo('projects')}>Projetos</li>
-          <li onClick={() => scrollTo('experiences')}>Experiências</li>
-          <li onClick={() => scrollTo('github')}>GitHub</li>
-          <li onClick={() => scrollTo('skills')}>Skills</li>
-          <li onClick={() => scrollTo('contact')}>Contato</li>
+          <li onClick={() => scrollTo('hero')}>{t.nav.about}</li>
+          <li onClick={() => scrollTo('projects')}>{t.nav.projects}</li>
+          <li onClick={() => scrollTo('experiences')}>{t.nav.experiences}</li>
+          <li onClick={() => scrollTo('trending')}>{t.nav.github}</li>
+          <li onClick={() => scrollTo('skills')}>{t.nav.skills}</li>
+          <li onClick={() => scrollTo('contact')}>{t.nav.contact}</li>
         </ul>
       </div>
       <div className="navbar-right">
-        <div className="navbar-profile" onClick={() => navigate('/')}>
+        <LanguageToggle />
+        <Notifications />
+        <div className="navbar-profile" onClick={() => navigate('/')} title={t.nav.backToProfiles}>
           <FaUserCircle size={32} color="#e50914" />
         </div>
       </div>

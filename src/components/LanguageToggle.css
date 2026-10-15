@@ -1,0 +1,51 @@
+.lang-toggle {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 2px;
+  isolation: isolate;
+}
+
+.lang-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  width: calc(50% - 2px);
+  background: #e50914;
+  border-radius: 999px;
+  transition: transform 0.25s ease;
+  z-index: -1;
+}
+
+.lang-toggle-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lang-toggle-btn.active {
+  color: #fff;
+}
+
+.lang-toggle-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-toggle-thumb {
+    transition: none;
+  }
+}

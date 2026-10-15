@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar.jsx'
 import Hero from '../components/Hero.jsx'
 import Projects from '../components/Projects.jsx'
 import Experiences from '../components/Experiences.jsx'
+import GitHubStats from '../components/GitHubStats.jsx'
 import GitHubRepos from '../components/GitHubRepos.jsx'
 import SkillsGlobe from '../components/SkillsGlobe.jsx'
 import Contact from '../components/Contact.jsx'
@@ -15,6 +16,7 @@ function Home() {
       <Hero />
       <Projects />
       <Experiences />
+      <GitHubStats />
       <GitHubRepos />
       <SkillsGlobe />
       <Contact />
