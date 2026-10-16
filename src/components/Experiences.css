@@ -15,7 +15,6 @@
   border-radius: 6px;
   padding: 1.25rem;
   transition: transform 0.2s ease, background 0.2s ease;
-  border-left: 3px solid #e50914;
 }
 
 .experience-card:hover {
@@ -34,23 +33,9 @@
   flex: 1;
 }
 
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.experience-header h3 {
+.experience-content h3 {
   font-size: 1.1rem;
   margin: 0;
-}
-
-.experience-period {
-  font-size: 0.8rem;
-  color: #e50914;
-  font-weight: 500;
 }
 
 .experience-place {
@@ -69,10 +54,5 @@
 @media (max-width: 768px) {
   .experiences {
     padding: 2rem 1.5rem;
-  }
-
-  .experience-header {
-    flex-direction: column;
-    gap: 0.2rem;
   }
 }

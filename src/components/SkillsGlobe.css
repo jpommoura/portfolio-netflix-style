@@ -1,0 +1,98 @@
+.skills-globe-section {
+  padding: 2rem 3rem;
+}
+
+.skills-globe-subtitle {
+  font-size: 0.85rem;
+  color: #808080;
+  margin-bottom: 0.5rem;
+}
+
+.skills-globe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-globe__stage {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  touch-action: none;
+}
+
+.skills-globe__stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.skills-globe__layer {
+  position: absolute;
+  inset: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.skills-globe__li {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skills-globe__item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--skill, #fff);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: filter 0.15s;
+  will-change: transform, opacity;
+}
+
+.skills-globe__item:hover {
+  filter: brightness(1.4) drop-shadow(0 0 6px var(--skill, #e50914));
+}
+
+.skills-globe__icon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.skills-globe__label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.skills-globe__item:hover .skills-globe__label {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .skills-globe-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .skills-globe__stage {
+    max-width: 350px;
+  }
+
+  .skills-globe__icon {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -8,46 +8,46 @@ const projects = [
     name: 'NexTrip',
     description: 'Aplicação web dinâmica de viagens com autenticação e CRUD administrativo.',
     techs: ['HTML', 'CSS', 'JavaScript', 'JSON Server'],
+    period: '2025/2',
     github: 'https://github.com/jpommoura/NexTrip',
     image: null,
-    period: '2026/1',
   },
   {
     id: 2,
     name: 'Vigilare',
     description: 'Plataforma de segurança de bairro com denúncias e mapeamento comunitário.',
     techs: ['HTML', 'Bootstrap', 'JavaScript', 'JSON Server'],
+    period: '2025/2',
     github: 'https://github.com/jpommoura',
     image: null,
-    period: '2026/1',
   },
   {
     id: 3,
-    name: 'VemDoar',
-    description: 'Plataforma de mobilização de doadores de sangue. Em desenvolvimento.',
-    techs: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-2-ti2-8243100-ok',
-    image: null,
-    badge: 'Em desenvolvimento',
-    period: '2026/2',
-  },
-  {
-    id: 4,
     name: 'Arquivo Fácil',
     description: 'Sistema de gerenciamento de notas fiscais com Supabase.',
     techs: ['Node.js', 'Express', 'Supabase'],
+    period: '2025/2',
     github: 'https://github.com/jpommoura/arquivo-facil',
     image: null,
-    period: '2026/2',
+  },
+  {
+    id: 4,
+    name: 'PenaltyCrash',
+    description: 'Jogo de pênaltis com mecânicas de crash.',
+    techs: ['HTML', 'CSS', 'JavaScript'],
+    period: '2026/1',
+    github: 'https://github.com/vnajose/PenaltyCrash',
+    image: null,
   },
   {
     id: 5,
-    name: 'PenaltyCrash',
-    description: 'Jogo de pênaltis com mecânicas de crash.',
-    techs: ['A definir'],
-    github: 'https://github.com/vnajose/PenaltyCrash',
-    image: null,
+    name: 'VemDoar',
+    description: 'Plataforma de mobilização de doadores de sangue.',
+    techs: ['React', 'Vite', 'CSS'],
     period: '2026/2',
+    github: 'https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-2-ti2-8243100-ok',
+    image: null,
+    badge: 'Em desenvolvimento',
   },
 ]
 
@@ -67,7 +67,7 @@ function Projects() {
   return (
     <section className="projects" id="projects">
       <h2 className="section-title">Projetos</h2>
-      <p className="timeline-subtitle">Linha do tempo — do mais antigo ao mais recente</p>
+      <p className="projects-subtitle">Do mais antigo ao mais recente</p>
       <div className="projects-row-wrapper">
         <button className="row-btn row-btn-left" onClick={() => scroll('left')}>
           <FaChevronLeft />
@@ -76,9 +76,8 @@ function Projects() {
           {projects.map((project, index) => (
             <div className="timeline-item" key={project.id}>
               <div className="timeline-marker-row">
-                <div className={`timeline-line ${index === 0 ? 'timeline-line-hidden' : ''}`} />
                 <div className="timeline-dot" />
-                <div className={`timeline-line ${index === projects.length - 1 ? 'timeline-line-hidden' : ''}`} />
+                {index < projects.length - 1 && <div className="timeline-line" />}
               </div>
               <span className="timeline-period">{project.period}</span>
               <div className="project-card">
@@ -99,7 +98,7 @@ function Projects() {
                   <p>{project.description}</p>
                   <div className="project-techs">
                     {project.techs.map((tech) => (
-                      <span key={tech} className="tech-tag">{tech}</span>
+                      <span className="tech-tag" key={tech}>{tech}</span>
                     ))}
                   </div>
                   <a

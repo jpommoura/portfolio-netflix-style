@@ -27,6 +27,8 @@ function Navbar() {
           <li onClick={() => scrollTo('hero')}>Sobre Mim</li>
           <li onClick={() => scrollTo('projects')}>Projetos</li>
           <li onClick={() => scrollTo('experiences')}>Experiências</li>
+          <li onClick={() => scrollTo('github')}>GitHub</li>
+          <li onClick={() => scrollTo('skills')}>Skills</li>
           <li onClick={() => scrollTo('contact')}>Contato</li>
         </ul>
       </div>

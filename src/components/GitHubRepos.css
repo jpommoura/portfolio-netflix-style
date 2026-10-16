@@ -1,0 +1,124 @@
+.github-repos {
+  padding: 2rem 3rem;
+}
+
+.github-subtitle {
+  font-size: 0.85rem;
+  color: #808080;
+  margin-bottom: 1.25rem;
+}
+
+.github-loading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #808080;
+  padding: 2rem 0;
+}
+
+.github-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.github-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.github-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.github-card:hover {
+  transform: translateY(-4px);
+  border-color: #e50914;
+}
+
+.github-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.github-card-icon {
+  color: #808080;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.github-card-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.github-card-desc {
+  font-size: 0.8rem;
+  color: #aaa;
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.github-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #808080;
+}
+
+.github-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github-lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.github-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .github-repos {
+    padding: 2rem 1.5rem;
+  }
+
+  .github-grid {
+    grid-template-columns: 1fr;
+  }
+}
