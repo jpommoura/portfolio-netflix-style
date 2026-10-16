@@ -1,12 +1,14 @@
 # 🎬 Portfolio Netflix — Portfólio Profissional
 
+🌐 **Acesse o site:** [https://portfolio-netflix-style.vercel.app/](https://portfolio-netflix-style.vercel.app/)
+
 > Site de portfólio profissional com tema inspirado na Netflix, desenvolvido como LAB01 da disciplina DIAW (Desenvolvimento e Integração de Aplicações Web) — PUC Minas.
 
 <table>
   <tr>
     <td width="800px">
       <div align="justify">
-        Portfólio web interativo com design inspirado na interface da <b>Netflix</b>, incluindo tela de seleção de perfil, navegação fluida entre seções, apresentação bilíngue (PT/EN), linha do tempo de projetos com scroll horizontal, cards de experiências e formulário de contato funcional. Desenvolvido com <b>React 19 + Vite</b>, priorizando <i>responsividade</i>, <i>performance</i> e <i>identidade visual coerente</i>.
+        Portfólio web interativo com design inspirado na interface da <b>Netflix</b>, incluindo tela de seleção de perfil, navegação fluida entre seções, apresentação bilíngue (PT/EN), linha do tempo de projetos com scroll horizontal, cards de experiências, integração com a API do GitHub, globo 3D de skills interativo e formulário de contato funcional. Desenvolvido com <b>React 19 + Vite</b>, priorizando <i>responsividade</i>, <i>performance</i> e <i>identidade visual coerente</i>.
       </div>
     </td>
     <td>
@@ -25,10 +27,12 @@
 ![Vite](https://img.shields.io/badge/Vite-8.3.0-007ec6?style=for-the-badge&logo=vite&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-007ec6?style=for-the-badge&logo=javascript&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Custom-007ec6?style=for-the-badge&logo=css3&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-3D-007ec6?style=for-the-badge&logo=threedotjs&logoColor=white)
 
 ---
 
 ## 📚 Índice
+
 - [Links Úteis](#-links-úteis)
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
@@ -44,7 +48,8 @@
 ---
 
 ## 🔗 Links Úteis
-* 🌐 **Demo Online:** *Deploy previsto para Sprint 03*
+
+* 🌐 **Demo Online:** [https://portfolio-netflix-style.vercel.app/](https://portfolio-netflix-style.vercel.app/)
 * 📐 **Wireframes (Figma):** [Abrir no Figma](https://www.figma.com/design/35wg3pyp6jvxaeUw2304LJ)
 * 📦 **Repositório GitHub:** [github.com/jpommoura](https://github.com/jpommoura)
 
@@ -57,10 +62,13 @@ Este projeto é um **portfólio profissional web** desenvolvido como parte do LA
 O objetivo é apresentar de forma moderna e interativa a trajetória acadêmica, projetos desenvolvidos, habilidades técnicas e formas de contato do desenvolvedor. O diferencial é o **tema inspirado na Netflix**, com tela de seleção de perfil, layout dark com acentos em vermelho (#e50914), e navegação intuitiva.
 
 O site é composto por:
+
 - **Tela de seleção de perfil** — simula a interface de escolha de perfil da Netflix
 - **Seção Sobre Mim** — com apresentação bilíngue (Português/Inglês)
 - **Seção Projetos** — linha do tempo horizontal dos projetos desenvolvidos
 - **Seção Experiências** — cards com formação acadêmica e atividades
+- **Seção GitHub** — repositórios públicos em tempo real via GitHub API
+- **Seção Skills** — globo 3D interativo com tecnologias dominadas (Three.js)
 - **Seção Contato** — ícones clicáveis + formulário de envio de mensagem
 
 ---
@@ -69,12 +77,14 @@ O site é composto por:
 
 - 🎬 **Tela de Seleção de Perfil:** Interface estilo Netflix com animação hover
 - 🌐 **Bilíngue (PT/EN):** Toggle de idioma na seção Sobre Mim
-- 📂 **Projetos em Scroll Horizontal:** Row estilo Netflix com setas de navegação
+- 📂 **Projetos em Scroll Horizontal:** Row estilo Netflix com setas de navegação e linha do tempo
 - 🎨 **Design Responsivo:** Adapta-se a desktop, tablet e mobile
 - 📧 **Formulário de Contato:** Com campos validados e envio via EmailJS
 - 🔗 **Links de Contato:** E-mail, WhatsApp, LinkedIn e GitHub com ícones clicáveis
 - 🧭 **Navegação Fluida:** Navbar fixa com scroll suave entre seções
 - 🌙 **Identidade Visual Netflix:** Paleta dark (#141414) com acentos vermelhos (#e50914)
+- 🐙 **GitHub API:** Repositórios públicos exibidos em tempo real com linguagem, stars e forks
+- 🌐 **Globo 3D de Skills:** Visualização interativa das tecnologias usando Three.js com rotação e hover
 
 ---
 
@@ -88,17 +98,21 @@ O site é composto por:
 | **Vite** | 8.3.0 | Build tool ultrarrápido |
 | **React Router DOM** | 7.18.4 | Navegação entre páginas (SPA) |
 | **React Icons** | 5.7.0 | Biblioteca de ícones (Font Awesome, etc.) |
+| **Three.js** | latest | Gráficos 3D na web |
+| **@react-three/fiber** | latest | React renderer para Three.js |
+| **@react-three/drei** | latest | Helpers e abstrações para React Three Fiber |
 | **CSS3** | — | Estilização customizada (sem frameworks CSS) |
 | **Google Fonts** | — | Fonte Inter (300–700) |
 
-### ⚙️ Ferramentas
+### ⚙️ Ferramentas e Integrações
 
 | Ferramenta | Descrição |
 | :--- | :--- |
 | **Git / GitHub** | Controle de versão e hospedagem do código |
 | **Figma** | Wireframes e prototipação |
-| **Vercel** | Hospedagem na nuvem (previsto Sprint 03) |
+| **Vercel** | Hospedagem na nuvem |
 | **EmailJS** | Envio de e-mail direto do front-end |
+| **GitHub REST API** | Busca de repositórios públicos em tempo real |
 
 ---
 
@@ -130,7 +144,7 @@ npm install
 npm run dev
 ```
 
-🎨 O site estará disponível em **http://localhost:5173**
+O site estará disponível em **http://localhost:5173**
 
 ### Build para produção
 
@@ -158,6 +172,10 @@ portfolio/
 │   │   ├── Projects.css
 │   │   ├── Experiences.jsx    # Cards de experiências
 │   │   ├── Experiences.css
+│   │   ├── GitHubRepos.jsx    # Repositórios via GitHub API
+│   │   ├── GitHubRepos.css
+│   │   ├── SkillsGlobe.jsx   # Globo 3D de skills (Three.js)
+│   │   ├── SkillsGlobe.css
 │   │   ├── Contact.jsx        # Ícones + formulário de contato
 │   │   ├── Contact.css
 │   │   ├── Footer.jsx         # Rodapé
@@ -190,8 +208,6 @@ portfolio/
 | :---: | :---: |
 | *Screenshot será adicionado* | *Screenshot será adicionado* |
 
-> **Nota:** Screenshots e GIFs do projeto em execução serão adicionados na Sprint 03.
-
 ---
 
 ## 📐 Wireframes / Protótipos
@@ -206,8 +222,10 @@ Os wireframes de média fidelidade foram criados no **Figma** e representam a es
 2. **Home (Browse)** — Página completa com:
    - Navbar fixa com links de navegação
    - Hero / Sobre Mim com toggle PT/EN
-   - Projetos em row horizontal scrollável
-   - Experiências em cards com borda vermelha
+   - Projetos em row horizontal scrollável com timeline
+   - Experiências em cards
+   - Repositórios GitHub em tempo real
+   - Globo 3D de Skills interativo
    - Contato com ícones + formulário
    - Footer
 
@@ -222,6 +240,9 @@ Os wireframes de média fidelidade foram criados no **Figma** e representam a es
 | React Router DOM | https://reactrouter.com/ |
 | React Icons | https://react-icons.github.io/react-icons/ |
 | EmailJS | https://www.emailjs.com/ |
+| Three.js | https://threejs.org/ |
+| React Three Fiber | https://docs.pmnd.rs/react-three-fiber/ |
+| GitHub REST API | https://docs.github.com/en/rest |
 | Google Fonts (Inter) | https://fonts.google.com/specimen/Inter |
 
 ---
@@ -237,5 +258,3 @@ Os wireframes de média fidelidade foram criados no **Figma** e representam a es
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-p o r t f o l i o   n e t f l i x   s t y l e  
- 
