@@ -120,6 +120,11 @@
 }
 
 .project-card:hover {
+  width: 150%;
+  border-color: #e50914;
+}
+
+.project-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0,0,0,0.5);
   z-index: 5;

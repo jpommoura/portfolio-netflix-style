@@ -10,7 +10,7 @@ import {
 import { useLanguage } from '../i18n/context.js'
 import './SkillsGlobe.css'
 
-/* ── Skills Data ── */
+/* ícones de skills */
 const skills = [
   { name: 'HTML',       icon: FaHtml5,              color: '#e34c26', link: 'https://developer.mozilla.org/docs/Web/HTML' },
   { name: 'CSS',        icon: FaCss3Alt,             color: '#264de4', link: 'https://developer.mozilla.org/docs/Web/CSS' },
@@ -30,7 +30,6 @@ const skills = [
   { name: 'SQL',        icon: FaFileCode,            color: '#00758f', link: '#' },
 ]
 
-/* ── Fibonacci Sphere ── */
 function fibonacciSphere(n, radius) {
   const golden = Math.PI * (3 - Math.sqrt(5))
   return Array.from({ length: n }, (_, i) => {
