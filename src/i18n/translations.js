@@ -140,19 +140,18 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      description:
-        'Software Engineering student at PUC Minas, currently in my 2nd semester. Passionate about web development, football, movies and gaming. Looking for my first internship opportunity in software development.',
+      description: 
+        "Software Engineering student at PUC Minas, currently in my second semester. In my free time, I enjoy practicing my programming skills, playing soccer, watching movies, and playing video games. I am seeking my first internship opportunity in the field of software development.",
       btnText: 'See Projects',
       btnInfo: 'More Info',
     },
     projects: {
       title: 'Projects',
-      subtitle: 'From oldest to newest',
       inProgress: 'In development',
       items: {
-        nextrip: 'Dynamic travel web app with authentication and an admin CRUD.',
+        nextrip: 'App for creating complete travel itineraries with a variety of tags.',
         vigilare: 'Neighborhood safety platform with incident reports and community mapping.',
-        arquivoFacil: 'Invoice management system built with Supabase.',
+        arquivoFacil: 'Web app to facilitate the organization of invoices and check for pending payments.',
         penaltyCrash: 'Penalty shootout game with crash mechanics.',
         vemDoar: 'Platform that mobilizes blood donors.',
       },
@@ -162,7 +161,7 @@ export const translations = {
       items: [
         {
           title: 'Software Engineering',
-          place: 'PUC Minas — Contagem',
+          place: 'PUC Minas, Coração Eucarístico',
           description:
             "Bachelor's degree in progress, currently in my 2nd semester. Focused on web development and software engineering.",
         },
@@ -170,13 +169,13 @@ export const translations = {
           title: 'Academic Projects',
           place: 'PUC Minas',
           description:
-            'Built hands-on projects such as NexTrip, Vigilare and VemDoar using HTML, CSS, JavaScript, Bootstrap and JSON Server.',
+            'Development of practical projects such as NexTrip, Vigilare, and VenDor, applying HTML, CSS, JavaScript, Bootstrap, JSON Server, etc.',
         },
         {
           title: 'Personal Projects',
           place: 'Freelance / Self-taught',
           description:
-            'Created Arquivo Fácil (Node.js + Supabase) to manage invoices, and explore modern APIs and development tools.',
+            'Created Arquivo Fácil to manage invoices, and explore modern APIs and development tools.',
         },
       ],
     },
